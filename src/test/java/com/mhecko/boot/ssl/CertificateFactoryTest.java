@@ -14,8 +14,9 @@
  *
  */
 
-package com.orange.clara.cloud.boot.ssl;
+package com.mhecko.boot.ssl;
 
+import com.mhecko.boot.ssl.CertificateFactory;
 import org.junit.Assert;
 import org.junit.Test;
 

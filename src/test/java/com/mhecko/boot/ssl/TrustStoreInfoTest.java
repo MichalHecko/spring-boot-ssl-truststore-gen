@@ -14,8 +14,9 @@
  *
  */
 
-package com.orange.clara.cloud.boot.ssl;
+package com.mhecko.boot.ssl;
 
+import com.mhecko.boot.ssl.TrustStoreInfo;
 import org.junit.Test;
 
 import java.io.File;

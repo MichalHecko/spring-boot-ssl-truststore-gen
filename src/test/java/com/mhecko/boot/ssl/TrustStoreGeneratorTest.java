@@ -14,7 +14,7 @@
  *
  */
 
-package com.orange.clara.cloud.boot.ssl;
+package com.mhecko.boot.ssl;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -50,7 +50,8 @@ public class TrustStoreGeneratorTest {
     public void should_generate_truststore() throws Exception {
 
         DefaultTrustStoreAppender trustStoreAppender = new DefaultTrustStoreAppender();
-        final TrustStoreInfo trustStoreFile = trustStoreAppender.append(new CertificateFactory().newInstance(CERTIFICATE));
+        trustStoreAppender.append(new CertificateFactory().newInstance(CERTIFICATE));
+        TrustStoreInfo trustStoreFile = trustStoreAppender.build();
 
         //there should be a truststore file
         Assert.assertNotNull(trustStoreFile.getTrustStorefFile());

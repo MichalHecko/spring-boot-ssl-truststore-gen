@@ -14,18 +14,23 @@
  *
  */
 
-package com.orange.clara.cloud.boot.ssl;
+package com.mhecko.boot.ssl;
+
+import org.apache.commons.io.IOUtils;
+import org.springframework.core.io.Resource;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.security.cert.Certificate;
 
-/**
- * Created by sbortolussi on 22/10/2015.
- */
 public class CertificateFactory {
-
     public static final String X_509_CERTIFICATE = "X.509";
+
+
+    public static Certificate newInstance(Resource certificate) throws IOException {
+        return CertificateFactory.newInstance(IOUtils.toString(certificate.getInputStream()));
+    }
 
     public static Certificate newInstance(String certificate) {
         if (certificate == null || "".equals(certificate))
@@ -39,8 +44,7 @@ public class CertificateFactory {
             }
             return cert;
         } catch (Exception e) {
-            String message = String
-                    .format("Cannot create certificate.", e);
+            String message = String.format("Cannot create certificate.", e);
             throw new IllegalStateException(message, e);
         }
     }

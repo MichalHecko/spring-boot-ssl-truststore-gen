@@ -14,16 +14,11 @@
  *
  */
 
-package com.orange.clara.cloud.boot.ssl;
+package com.mhecko.boot.ssl;
 
 import java.io.File;
 
-/**
- *
- * Created by sbortolussi on 12/11/2015.
- */
 public class TrustStoreInfo {
-
     private File trustStoreFile;
 
     private String password;
@@ -53,7 +48,4 @@ public class TrustStoreInfo {
     public String getPassword() {
         return password;
     }
-
-
-
 }
